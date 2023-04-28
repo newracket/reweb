@@ -1,0 +1,32 @@
+nav {
+  min-height: 60px;
+  height: 10%;
+  width: 100%;
+
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+  background: linear-gradient(85deg, #3023ae, #b15dbe, #3023ae);
+
+  user-select: none;
+}
+
+.homeLink {
+  display: flex;
+
+  cursor: pointer;
+}
+
+.logo {
+  width: 60px;
+  pointer-events: none;
+}
+
+.title {
+  color: white;
+
+  font-size: 3rem;
+
+  margin: 0;
+}

@@ -1,0 +1,18 @@
+.home-outer-container {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.home-container {
+  height: 100%;
+
+  display: flex;
+}
+
+.code {
+  width: 70%;
+
+  background-color: cyan;
+}
