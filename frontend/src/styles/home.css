@@ -16,7 +16,7 @@
   background: -moz-linear-gradient(90deg, hsla(33, 100%, 53%, 1) 0%, hsla(58, 100%, 68%, 1) 100%);
   background: -webkit-linear-gradient(90deg, hsla(33, 100%, 53%, 1) 0%, hsla(58, 100%, 68%, 1) 100%);
   filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#FF930F", endColorstr="#FFF95B", GradientType=1);
-  width: 100%;
+  width: 60%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -102,4 +102,8 @@
 .cpp-logo {
   width: 120px;
   pointer-events: none;
+}
+
+.cpp-logo-box {
+  width: 250px;
 }
