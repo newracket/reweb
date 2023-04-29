@@ -41,7 +41,7 @@
   justify-content: center;
   align-items: center;
   padding: 100px 0;
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   margin-top: 200px;
   background-color: gray;
@@ -91,7 +91,7 @@
 
 .info-column, .language-column {
   text-align: center; 
-  width: 23.93%;
+  width: 33.93%;
   height: 80%;
   background-color: #f8f4f4;
   margin-bottom: 100px;
