@@ -7,9 +7,8 @@ nav {
   justify-content: left;
   align-items: center;
 
-  background: #60EFFF;
-
   user-select: none;
+  border-bottom: 1px solid #ccc;
 }
 
 .homeLink {

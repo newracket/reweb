@@ -2,7 +2,6 @@
 
 .home-outer-container {
   height: 100%;
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
 }
@@ -13,11 +12,6 @@
 }
 
 .home-banner {
-  background: hsla(186, 100%, 69%, 1);
-  background: linear-gradient(90deg, hsla(186, 100%, 69%, 1) 0%, hsla(152, 100%, 50%, 1) 50%, hsla(186, 100%, 69%, 1) 100%);
-  background: -moz-linear-gradient(90deg, hsla(186, 100%, 69%, 1) 0%, hsla(152, 100%, 50%, 1) 50%, hsla(186, 100%, 69%, 1) 100%);
-  background: -webkit-linear-gradient(90deg, hsla(186, 100%, 69%, 1) 0%, hsla(152, 100%, 50%, 1) 50%, hsla(186, 100%, 69%, 1) 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#60EFFF", endColorstr="#00FF87", GradientType=1);
   height: 100%;
   width: 100%;
   margin: 0 auto;
@@ -27,8 +21,10 @@
 }
 
 .banner-text {
+  color: red;
   font-family: 'Poppins', sans-serif;
   text-align: center;
+  margin-bottom: -90px;
 }
 
 .banner-text h1 {
@@ -44,7 +40,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  padding: 100px 0;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 200px;
+  background-color: gray;
 }
 .upload-button {
   align-items: center;
@@ -81,37 +81,42 @@
     }
   }
 
+.columns-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 80px;
+}
 
-.info-section {
-  font-family: 'Poppins', sans-serif;
-  margin-top: 100px;
-  text-align: center
+.info-column, .language-column {
+  text-align: center; 
+  width: 40%;
+  background-color: #f6f6f6;
 }
 
 .instructions-container {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
 }
 
 .upload-box, .improve-box, .easy-box {
-  width: 200px;
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 #upload-logo, #improve-logo, #easy-logo {
-  width: 100px;
+  height: 100px;
   pointer-events: none;
-}
-
-.supported-languages {
-  font-family: 'Poppins', sans-serif;
-  margin-top: 100px;
-  text-align: center
 }
 
 .logo-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   margin-top: 25px;
