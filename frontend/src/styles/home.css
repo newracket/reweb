@@ -84,16 +84,25 @@
 .columns-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 30px;
 }
 
 .info-column, .language-column {
   text-align: center; 
-  width: 40%;
+  width: 23.93%;
+  height: 80%;
   background-color: #f8f4f4;
   margin-bottom: 100px;
+}
+
+.info-column {
+  margin-right: 20px;
+}
+
+.language-column {
+  margin-left: 20px;
 }
 
 .instructions-container {
@@ -120,7 +129,6 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin-top: 25px;
 }
 
 #java-logo {
