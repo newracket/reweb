@@ -63,6 +63,13 @@ function Home() {
           </div>
         </div>
       </div>
+      <div className = "footer">
+      <footer>
+        <p>
+          Copyright © 2023 ReWeb
+        </p>
+      </footer>
+      </div>
     </div>
   );
 }

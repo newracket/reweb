@@ -92,7 +92,8 @@
 .info-column, .language-column {
   text-align: center; 
   width: 40%;
-  background-color: #f6f6f6;
+  background-color: #f8f4f4;
+  margin-bottom: 100px;
 }
 
 .instructions-container {
@@ -139,4 +140,12 @@
 
 #cpp-logo-box {
   width: 250px;
+}
+
+.footer {
+  margin-top: auto;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 50px;
 }
