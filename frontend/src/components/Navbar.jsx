@@ -1,4 +1,3 @@
-import reweb from "../assets/reweb.svg";
 import "../styles/navbar.css";
 import { useNavigate } from "react-router-dom";
 
@@ -8,7 +7,7 @@ function Navbar() {
   return (
     <nav>
       <div className="homeLink" onClick={() => navigate("/")}>
-        <img src={reweb} alt="ReWeb Logo" className="logo" />
+        <img src="./reweb.svg" alt="ReWeb Logo" className="logo" />
         <h1 className="title">ReWeb</h1>
       </div>
     </nav>
