@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Poppins:wght@700&family=Roboto&display=swap');
 
 .home-outer-container {
   height: 100%;
@@ -27,8 +27,7 @@
 }
 
 .banner-text {
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
 }
 
@@ -56,8 +55,7 @@
   box-sizing: border-box;
   color: #FFFFFF;
   display: flex;
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 20px;
   justify-content: center;
   line-height: 1em;
@@ -85,8 +83,7 @@
 
 
 .info-section {
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin-top: 100px;
   text-align: center
 }
@@ -108,8 +105,7 @@
 }
 
 .supported-languages {
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin-top: 100px;
   text-align: center
 }
