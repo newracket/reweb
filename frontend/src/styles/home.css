@@ -1,18 +1,105 @@
 .home-outer-container {
   height: 100%;
-
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
 }
 
 .home-container {
-  height: 100%;
-
+  height: 50%;
   display: flex;
 }
 
-.code {
-  width: 70%;
+.home-banner {
+  background: hsla(33, 100%, 53%, 1);
+  background: linear-gradient(90deg, hsla(33, 100%, 53%, 1) 0%, hsla(58, 100%, 68%, 1) 100%);
+  background: -moz-linear-gradient(90deg, hsla(33, 100%, 53%, 1) 0%, hsla(58, 100%, 68%, 1) 100%);
+  background: -webkit-linear-gradient(90deg, hsla(33, 100%, 53%, 1) 0%, hsla(58, 100%, 68%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#FF930F", endColorstr="#FFF95B", GradientType=1);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  background-color: cyan;
+.banner-text {
+  text-align: center;
+}
+
+.banner-text h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+.banner-text p {
+  font-size: 1.5em;
+  margin: 0;
+}
+.upload-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px
+}
+.upload-button {
+  align-items: center;
+  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 19px 24px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  }
+  .button-63:active,
+  .button-63:hover {
+    outline: 0;
+  }
+
+  @media (min-width: 768px) {
+    .button-63 {
+      font-size: 24px;
+      min-width: 196px;
+    }
+  }
+
+.supported-languages {
+  margin-top: 100px;
+  text-align: center
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.java-logo {
+  width: 250px;
+  pointer-events: none;
+}
+
+.python-logo {
+  width: 300px;
+  pointer-events: none;
+}
+
+.cpp-logo {
+  width: 120px;
+  pointer-events: none;
 }

@@ -1,17 +1,39 @@
 import Navbar from "../components/Navbar.jsx";
 import Sidebar from "../components/Sidebar.jsx";
+import java from "../assets/javalogo.svg";
+import python from "../assets/pythonlogo.svg";
+import cpp from "../assets/cpplogo.svg";
 import "../styles/home.css";
 
 function Home() {
   return (
     <div className="home-outer-container">
       <Navbar />
-
       <div className="home-container">
-        <Sidebar />
-
-        <div className="code">
-          <h1>Home</h1>
+        <div className="home-banner">
+          <div className="banner-text">
+            <h1>
+              ReWeb
+            </h1>
+            <p>
+              Say goodbye to messy code!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className = "upload-section">
+        <button class="upload-button" role="button">
+          Choose Files
+        </button>
+      </div>
+      <div className = "supported-languages">
+        <h1>
+          What languages do we support?
+        </h1>
+        <div className = "logo-container">
+          <img src={java} alt="Java Logo" className="java-logo"/>
+          <img src={python} alt="Python Logo" className="python-logo"/>
+          <img src={cpp} alt="CPP Logo" className="cpp-logo"/>
         </div>
       </div>
     </div>
