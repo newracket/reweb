@@ -7,7 +7,7 @@ nav {
   justify-content: left;
   align-items: center;
 
-  background: linear-gradient(85deg, #3023ae, #b15dbe, #3023ae);
+  background: #60EFFF;
 
   user-select: none;
 }
@@ -21,10 +21,11 @@ nav {
 .logo {
   width: 60px;
   pointer-events: none;
+  margin-right: 20px;
 }
 
 .title {
-  color: white;
+  color: black;
 
   font-size: 3rem;
 

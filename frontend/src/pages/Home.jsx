@@ -2,6 +2,9 @@ import Navbar from "../components/Navbar.jsx";
 import java from "../assets/javalogo.svg";
 import python from "../assets/pythonlogo.svg";
 import cpp from "../assets/cpplogo.svg";
+import upload from "../assets/upload.svg";
+import improve from "../assets/improve.svg";
+import easy from "../assets/easy.svg";
 import "../styles/home.css";
 import {useRef} from "react";
 
@@ -21,17 +24,40 @@ function Home() {
       </div>
       <div className="upload-section">
         <button className="upload-button" role="button" onClick={() => fileUpload.current.click()}>
-          Choose Files
+          Choose File
         </button>
         <input type="file" id="fileUpload" style={{display: "none"}} ref={fileUpload} />
+      </div>
+      <div className="info-section">
+        <h1>How to use ReWeb</h1>
+        <div className = "instructions-container">
+          <div className = "upload-box">
+            <img src={upload} alt="Upload Logo" id = "upload-logo"/>
+            <p>
+              Upload your file using the Choose File Button
+            </p>
+          </div>
+          <div className = "improve-box">
+            <img src={improve} alt="Improve Logo" id = "improve-logo"/>
+            <p>
+              Improve your code
+            </p>
+          </div>
+          <div className = "easy-box">
+            <img src={easy} alt="Easy Logo" id = "easy-logo"/>
+            <p>
+              It's that easy!
+            </p>
+          </div>
+        </div>
       </div>
       <div className="supported-languages">
         <h1>What languages do we support?</h1>
         <div className="logo-container">
-          <img src={java} alt="Java Logo" className="java-logo"/>
-          <img src={python} alt="Python Logo" className="python-logo"/>
-          <div className="cpp-logo-box">
-            <img src={cpp} alt="CPP Logo" className="cpp-logo"/>
+          <img src={java} alt="Java Logo" id="java-logo"/>
+          <img src={python} alt="Python Logo" id="python-logo"/>
+          <div id="cpp-logo-box">
+            <img src={cpp} alt="CPP Logo" id="cpp-logo"/>
           </div>
         </div>
       </div>
