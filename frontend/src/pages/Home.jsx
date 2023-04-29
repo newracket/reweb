@@ -34,21 +34,21 @@ function Home() {
           <div className = "instructions-container">
             <div className = "upload-box">
               <img src={upload} alt="Upload Logo" id = "upload-logo"/>
-              <p>
+              <h2>
                 Upload your file using the Choose File Button
-              </p>
+              </h2>
             </div>
             <div className = "improve-box">
               <img src={improve} alt="Improve Logo" id = "improve-logo"/>
-              <p>
+              <h2>
                 Improve your code
-              </p>
+              </h2>
             </div>
             <div className = "easy-box">
               <img src={easy} alt="Easy Logo" id = "easy-logo"/>
-              <p>
+              <h2>
                 It's that easy!
-              </p>
+              </h2>
           </div>
         </div>
       </div>
