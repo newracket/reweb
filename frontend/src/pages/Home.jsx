@@ -3,8 +3,11 @@ import java from "../assets/javalogo.svg";
 import python from "../assets/pythonlogo.svg";
 import cpp from "../assets/cpplogo.svg";
 import "../styles/home.css";
+import {useRef} from "react";
 
 function Home() {
+  const fileUpload = useRef(null);
+
   return (
     <div className="home-outer-container">
       <Navbar/>
@@ -17,9 +20,10 @@ function Home() {
         </div>
       </div>
       <div className="upload-section">
-        <button className="upload-button" role="button">
+        <button className="upload-button" role="button" onClick={() => fileUpload.current.click()}>
           Choose Files
         </button>
+        <input type="file" id="fileUpload" style={{display: "none"}} ref={fileUpload} />
       </div>
       <div className="supported-languages">
         <h1>What languages do we support?</h1>
