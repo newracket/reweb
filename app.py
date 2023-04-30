@@ -10,12 +10,6 @@ CORS(app, resources={r"/*": {"origins": "*"}})
 
 api = Api(app)
 
+api.add_resource(Accessibility, '/improve')
 
-@app.route("/", defaults={'path': ''})
-def index(path):
-    return send_from_directory(app.static_folder, 'index.html')
-
-
-api.add_resource(Accessibility, '/check')
-api.add_resource(Improver, '/improve')
 app.run(debug=True)
