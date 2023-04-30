@@ -34,3 +34,20 @@ nav {
 
   margin: 0;
 }
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  width: 100%;
+  margin-left: 50px;
+}
+
+.navLink {
+  color: white;
+  font-size: 2rem;
+  font-family: "Comme", sans-serif;
+  cursor: pointer;
+  font-weight: normal;
+}
