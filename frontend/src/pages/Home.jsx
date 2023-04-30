@@ -11,6 +11,7 @@ import { useRef, useState } from "react";
 import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import {getImprovedCode} from "../../api.js";
 
 function Home() {
   const fileUpload = useRef(null);
@@ -24,52 +25,14 @@ function Home() {
     reader.readAsText(file);
     reader.onload = async () => {
       const oldCode = reader.result;
+      const fileType = file.name.split(".").pop();
+
       setShowSpinner(true);
-      const response = await makeAPIRequest(oldCode);
-      // const newCode = atob(response.newCode);
-      const newCode = response.newCode;
+      const newCode = await getImprovedCode(oldCode);
       setShowSpinner(false);
 
-      navigate("/changes", { state: { oldCode, newCode } });
+      navigate("/changes", { state: { oldCode, newCode, fileType } });
     };
-  }
-
-  async function makeAPIRequest(code) {
-    const base64 = btoa(code);
-
-    const URL = "http://localhost:5000/improve";
-    const headers = {
-      "Content-Type": "application/json",
-    };
-    const body = {
-      message: base64,
-      bugs: true,
-      comments: true,
-      improve: true,
-    };
-
-    return await mockRequest({
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify(body),
-    });
-    // const response = await fetch(URL, {
-    //   method: "POST",
-    //   headers: headers,
-    //   body: JSON.stringify(body),
-    // });
-    //
-    // return await response.json();
-  }
-
-  async function mockRequest() {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          newCode: `const a = 10\nconst boo = 10\n\nif(a === 10) {\n\tconsole.log('bar')\n}`,
-        });
-      }, 3000);
-    });
   }
 
   return (

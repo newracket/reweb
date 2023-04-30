@@ -10,9 +10,10 @@ import {
 
 import "react-diff-view/style/index.css";
 import "../styles/changes.css";
-import { useMemo } from "react";
+import {useMemo, useState} from "react";
 import Navbar from "../components/Navbar.jsx";
-import { useLocation } from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
+import {getImprovedCode} from "../../api.js";
 
 let oldCode = `
 const a = 10
@@ -34,7 +35,7 @@ if(a === 10) {
   console.log('bar')
 }
 `;
-const codeLanguage = "js";
+let fileType = "py";
 
 const customTokenize = (hunks) => {
   if (!hunks) {
@@ -58,7 +59,11 @@ function Changes() {
   if (state) {
     oldCode = state.oldCode;
     newCode = state.newCode;
+    fileType = state.fileType;
   }
+
+  const [showSpinner, setShowSpinner] = useState(false);
+  const navigate = useNavigate();
 
   const diffText = formatLines(diffLines(oldCode, newCode), { context: 3 });
   const [diff] = parseDiff(diffText, { nearbySequences: "zip" });
@@ -69,9 +74,17 @@ function Changes() {
     const element = document.createElement("a");
     const file = new Blob([newCode], { type: "text/plain" });
     element.href = URL.createObjectURL(file);
-    element.download = `new.${codeLanguage}`;
+    element.download = `new.${fileType}`;
     document.body.appendChild(element);
     element.click();
+  }
+
+  async function regenerateNewCode() {
+      setShowSpinner(true);
+      const newCode = await getImprovedCode(oldCode);
+      setShowSpinner(false);
+
+      navigate("/changes", { state: { oldCode, newCode, fileType } });
   }
 
   return (
@@ -124,9 +137,10 @@ function Changes() {
                   <Button
                     type="primary"
                     shape="round"
-                    icon={<ReloadOutlined />}
+                    icon={showSpinner ? <ReloadOutlined spin /> : <ReloadOutlined />}
                     size="large"
                     className="regenerate-button"
+                    onClick={regenerateNewCode}
                   >
                     Regenerate
                   </Button>
@@ -134,35 +148,6 @@ function Changes() {
               </tr>
             </tbody>
           </table>
-
-          {/*<div className="download-row labelButtonRow">*/}
-          {/*  <label>Happy with your changes? <SmileOutlined /> </label>*/}
-
-          {/*  <Button*/}
-          {/*    type="primary"*/}
-          {/*    shape="round"*/}
-          {/*    icon={<DownloadOutlined />}*/}
-          {/*    size="large"*/}
-          {/*    className="download-button"*/}
-          {/*    onClick={downloadNewCode}*/}
-          {/*  >*/}
-          {/*    Download*/}
-          {/*  </Button>*/}
-          {/*</div>*/}
-
-          {/*<div className="regenerate-row labelButtonRow">*/}
-          {/*  <label>Want better improvements? <FrownOutlined /> </label>*/}
-
-          {/*  <Button*/}
-          {/*    type="primary"*/}
-          {/*    shape="round"*/}
-          {/*    icon={<ReloadOutlined />}*/}
-          {/*    size="large"*/}
-          {/*    className="regenerate-button"*/}
-          {/*  >*/}
-          {/*    Regenerate*/}
-          {/*  </Button>*/}
-          {/*</div>*/}
         </div>
 
         <div className="changes-main-content">
