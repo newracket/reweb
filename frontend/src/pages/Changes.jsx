@@ -12,8 +12,9 @@ import "react-diff-view/style/index.css";
 import "../styles/changes.css";
 import { useMemo } from "react";
 import Navbar from "../components/Navbar.jsx";
+import { useLocation } from "react-router-dom";
 
-const oldCode = `
+let oldCode = `
 const a = 10
 const b = 10
 const c = () => console.log('foo')
@@ -23,8 +24,9 @@ if(a > 10) {
 }
 
 console.log('done')
+console.log('placeholder')
 `;
-const newCode = `
+let newCode = `
 const a = 10
 const boo = 10
 
@@ -52,6 +54,12 @@ const customTokenize = (hunks) => {
 };
 
 function Changes() {
+  const { state } = useLocation();
+  if (state) {
+    oldCode = state.oldCode;
+    newCode = state.newCode;
+  }
+
   const diffText = formatLines(diffLines(oldCode, newCode), { context: 3 });
   const [diff] = parseDiff(diffText, { nearbySequences: "zip" });
   const { hunks, type } = diff;
@@ -87,42 +95,44 @@ function Changes() {
           </div>
 
           <table className="buttons-table">
-            <tr>
-              <td>
-                <label className="happy-label">
-                  Happy with your changes? <SmileOutlined />
-                </label>
-              </td>
-              <td>
-                <Button
-                  type="primary"
-                  shape="round"
-                  icon={<DownloadOutlined />}
-                  size="large"
-                  onClick={downloadNewCode}
-                >
-                  Download
-                </Button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label className="frown-label">
-                  Want better improvements? <FrownOutlined />
-                </label>
-              </td>
-              <td>
-                <Button
-                  type="primary"
-                  shape="round"
-                  icon={<ReloadOutlined />}
-                  size="large"
-                  className="regenerate-button"
-                >
-                  Regenerate
-                </Button>
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td>
+                  <label className="happy-label">
+                    Happy with your changes? <SmileOutlined />
+                  </label>
+                </td>
+                <td>
+                  <Button
+                    type="primary"
+                    shape="round"
+                    icon={<DownloadOutlined />}
+                    size="large"
+                    onClick={downloadNewCode}
+                  >
+                    Download
+                  </Button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label className="frown-label">
+                    Want better improvements? <FrownOutlined />
+                  </label>
+                </td>
+                <td>
+                  <Button
+                    type="primary"
+                    shape="round"
+                    icon={<ReloadOutlined />}
+                    size="large"
+                    className="regenerate-button"
+                  >
+                    Regenerate
+                  </Button>
+                </td>
+              </tr>
+            </tbody>
           </table>
 
           {/*<div className="download-row labelButtonRow">*/}

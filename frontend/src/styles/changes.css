@@ -64,6 +64,6 @@
   margin-top: 20px;
 }
 
-.buttons-table > tr > td {
+.buttons-table > tbody > tr > td {
   padding: 0.5rem;
 }

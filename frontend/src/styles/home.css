@@ -72,6 +72,11 @@
   cursor: pointer;
 }
 
+#spinningIcon {
+  margin-left: 40px;
+  color: white;
+}
+
 .upload-button:active,
 .upload-button:hover {
   outline: 0;
