@@ -35,9 +35,11 @@
     padding: 50px 0;
     width: 70%;
     height: 50%;
-    margin: -90px auto 0;
+    margin: -80px auto 0;
     background-color: white;
-    border: 3px solid gray;
+    border: 2px solid gray;
+    /*border-top: none;*/
+    border-radius: 2rem;
 }
 
 .our-mission, .how-we-made-this {
@@ -46,6 +48,10 @@
     align-items: center;
     justify-content: center;
     width: 30%;
+}
+
+.our-mission > h1, .how-we-made-this > h1 {
+    font-family: "Comme", sans-serif;
 }
 
 .reweb-logo-container {
@@ -85,12 +91,4 @@
 .about-us-box p {
     font-family: 'Open Sans', sans-serif;
     width: 100%;
-}
-
-.footer {
-    margin-top: auto;
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 50px;
 }
