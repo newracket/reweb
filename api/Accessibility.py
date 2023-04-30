@@ -5,7 +5,6 @@ import os
 from dotenv import load_dotenv, find_dotenv
 import base64
 
-
 load_dotenv(find_dotenv())
 
 class Accessibility(Resource):
@@ -30,13 +29,6 @@ class Accessibility(Resource):
         improve = args["improve"]
         code = args["message"]
 
-        # code = args["code"]
-        # improvement = args["improvement"]
-
-        # bugs = request.form.get('bugs')
-        # comments = request.form.get('comments')
-        # improve = request.form.get('improve')
-        # code = request.form.get('message')
         print(bugs, comments, improve, code, type(bugs))
         instruction = "Give me absolutely no description, I only want code. Fix what is broken and don't return anything but the fixed code. For the following HTML code, "
         if bugs == "true":
@@ -60,7 +52,7 @@ class Accessibility(Resource):
             "Authorization": "Bearer " + token
         }
         response = requests.post(url, json=payload, headers=headers)
-        result = json.loads(response.text) #['openai']['generated_text']
+        result = json.loads(response.text)
         data = (base64.b64encode(result['openai']['generated_text'].encode('ascii'))).decode('ascii')
 
         return data 
