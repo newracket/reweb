@@ -30,14 +30,17 @@
 
 .about-us-box {
     display: flex;
-    justify-content: space-between;
+    flex: 1 1 0;
+    justify-content: center;
     align-items: flex-start;
-    padding: 50px 0;
-    width: 70%;
-    height: 50%;
-    margin: -80px auto 0;
-    background-color: white;
+    padding: 20px;
+    margin: 50px 15% 50px 15%;
+    /*width: 70%;
+    height: 50%;*/
+    /*margin: -80px auto 0;
+    background-color: white;*/
     border: 2px solid gray;
+    font-size: 12px;
     /*border-top: none;*/
     border-radius: 2rem;
 }
@@ -54,39 +57,61 @@
     font-family: "Comme", sans-serif;
 }
 
-.reweb-logo-container {
+/* .reweb-logo-container { */
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*display: inline-block;*/
+    /* idth: 10%;*/
+    /*height: 10%;*/
+/* }*/
+.reweb-logo-container { 
+    height: 10%;
+    width: 10%;
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
+    margin: 40px 0px 20px 0px;
+    padding: 50px;
 }
+
 #reweb-logo {
+    /*display: inline-block;*/
+    /*height: 200px;*/
+    /*margin-left: 30px;*/
+    /*margin-top: 80px;*/
+    
+    width: 200px;
     height: 200px;
-    margin-left: 30px;
-    margin-top: 80px;
 }
+
 .our-mission{
-    margin-left: -50px;
+    /*margin-left: -50px;*/
+    padding: 30px;
 }
 .how-we-made-this {
-    margin-right: 0px;
+    /*margin-right: 0px;*/
+    padding: 30px;
 }
 
 .logos {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 10%
+    /* align-items: center;*/
+    justify-content: center; 
+    margin: 150px 0px 0px 0px;
+    width: 10%;
+    height: 10px;
 }
 
-#react-logo, #javascript-logo {
+/* #react-logo, #javascript-logo {
     height: 150px;
     margin-right: 90px;
 }
 
 #react-logo {
     margin-top: 50px;
-}
+} */
 
 .about-us-box p {
     font-family: 'Open Sans', sans-serif;
