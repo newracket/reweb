@@ -3,6 +3,8 @@
 
   display: flex;
   flex-direction: column;
+
+  font-family: "Comme", sans-serif;
 }
 
 .changes-container {
@@ -25,23 +27,43 @@
   align-items: center;
 }
 
-.changes-title {
+.changes-options-title {
   font-family: "Comme", sans-serif;
   font-size: 2rem;
 }
 
-.changes-checkbox {
-  width: 20px;
-  height: 20px;
+.changes-list > li {
+  font-size: 1.25em;
+  margin: 0.5rem 0;
+  color: #8a46b7;
+}
+
+.labelButtonRow {
+  margin: 0.5rem 0;
+}
+
+.happy-label, .frown-label {
+  font-size: 1.25em;
+  /*margin: 1em;*/
+}
+
+.happy-label {
+  color: #199a2a;
+}
+
+.frown-label {
+  color: #c02727;
 }
 
 .changes-main-content {
   height: 100%;
   width: 70%;
-
-  /*background-color: green;*/
 }
 
-.download-button {
-  margin-top: 3rem;
+.buttons-table {
+  margin-top: 20px;
+}
+
+.buttons-table > tr > td {
+  padding: 0.5rem;
 }

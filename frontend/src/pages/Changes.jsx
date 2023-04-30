@@ -1,7 +1,12 @@
 import { diffLines, formatLines } from "unidiff";
 import { Diff, markEdits, parseDiff, tokenize } from "react-diff-view";
 import { Button } from "antd";
-import { DownloadOutlined, ReloadOutlined } from "@ant-design/icons";
+import {
+  DownloadOutlined,
+  FrownOutlined,
+  ReloadOutlined,
+  SmileOutlined,
+} from "@ant-design/icons";
 
 import "react-diff-view/style/index.css";
 import "../styles/changes.css";
@@ -67,85 +72,87 @@ function Changes() {
 
       <div className="changes-container">
         <div className="changes-sidebar">
-          <h1 className="changes-title">Here are your improvements!</h1>
-
           <div className="changes-options">
-            <h2 className="changes-options-title">Options:</h2>
+            <h2 className="changes-options-title">
+              Here are the changes we made:
+            </h2>
 
-            <table>
-              <tr>
-                <td>
-                  <label htmlFor="fix-bugs">Fix Bugs</label>
-                </td>
-                <td>
-                  <input
-                    type="checkbox"
-                    id="fix-bugs"
-                    className="changes-checkbox"
-                    onClick={(e) => e.preventDefault()}
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label htmlFor="add-comments">Add Comments</label>
-                </td>
-                <td>
-                  <input
-                    type="checkbox"
-                    id="add-comments"
-                    className="changes-checkbox"
-                    onClick={(e) => e.preventDefault()}
-                    checked
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label htmlFor="improve-accessibility">
-                    Improve Accessibility
-                  </label>
-                </td>
-                <td>
-                  <input
-                    type="checkbox"
-                    id="improve-accessibility"
-                    className="changes-checkbox"
-                    onClick={(e) => e.preventDefault()}
-                  />
-                </td>
-              </tr>
-            </table>
+            <ul className="changes-list">
+              <li>Fixed bugs in your code</li>
+              <li>Added comments to your code</li>
+              <li>Improved accessibility for users of your code</li>
+              <li>Improved variable and function names</li>
+              <li>Properly formatted your code</li>
+            </ul>
           </div>
 
-          <p className="changes-description">
-            If you like your changes, click download to download the new code!
-            <br />
-            If not, click regenerate to get a new set of changes.
-          </p>
+          <table className="buttons-table">
+            <tr>
+              <td>
+                <label className="happy-label">
+                  Happy with your changes? <SmileOutlined />
+                </label>
+              </td>
+              <td>
+                <Button
+                  type="primary"
+                  shape="round"
+                  icon={<DownloadOutlined />}
+                  size="large"
+                  onClick={downloadNewCode}
+                >
+                  Download
+                </Button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label className="frown-label">
+                  Want better improvements? <FrownOutlined />
+                </label>
+              </td>
+              <td>
+                <Button
+                  type="primary"
+                  shape="round"
+                  icon={<ReloadOutlined />}
+                  size="large"
+                  className="regenerate-button"
+                >
+                  Regenerate
+                </Button>
+              </td>
+            </tr>
+          </table>
 
-          <div className="buttons-row">
-            <Button
-              type="primary"
-              shape="round"
-              icon={<DownloadOutlined />}
-              size="large"
-              className="download-button"
-              onClick={downloadNewCode}
-            >
-              Download
-            </Button>
+          {/*<div className="download-row labelButtonRow">*/}
+          {/*  <label>Happy with your changes? <SmileOutlined /> </label>*/}
 
-            <Button
-              type="primary"
-              shape="round"
-              icon={<ReloadOutlined />}
-              size="large"
-              className="regenerate-button"
-            >
-              Regenerate
-            </Button>
-          </div>
+          {/*  <Button*/}
+          {/*    type="primary"*/}
+          {/*    shape="round"*/}
+          {/*    icon={<DownloadOutlined />}*/}
+          {/*    size="large"*/}
+          {/*    className="download-button"*/}
+          {/*    onClick={downloadNewCode}*/}
+          {/*  >*/}
+          {/*    Download*/}
+          {/*  </Button>*/}
+          {/*</div>*/}
+
+          {/*<div className="regenerate-row labelButtonRow">*/}
+          {/*  <label>Want better improvements? <FrownOutlined /> </label>*/}
+
+          {/*  <Button*/}
+          {/*    type="primary"*/}
+          {/*    shape="round"*/}
+          {/*    icon={<ReloadOutlined />}*/}
+          {/*    size="large"*/}
+          {/*    className="regenerate-button"*/}
+          {/*  >*/}
+          {/*    Regenerate*/}
+          {/*  </Button>*/}
+          {/*</div>*/}
         </div>
 
         <div className="changes-main-content">
