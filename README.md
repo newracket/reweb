@@ -2,6 +2,7 @@ To run this, please run a python virtual environment
 ```
 source venv/bin/activate
 ```
+Install the necessary python requirements from `requirements.txt`.
 
 Similarly, please create a `.env` file in `api/`, which contains the following statement:
 ```
