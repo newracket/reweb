@@ -82,7 +82,7 @@ function Changes() {
 
   async function regenerateNewCode() {
       setShowSpinner(true);
-      const newCode = await getImprovedCode(oldCode);
+      const newCode = await getImprovedCode(oldCode, true);
       setShowSpinner(false);
 
       navigate("/changes", { state: { oldCode, newCode, fileType } });
