@@ -14,6 +14,7 @@ import {useMemo, useState} from "react";
 import Navbar from "../components/Navbar.jsx";
 import {useLocation, useNavigate} from "react-router-dom";
 import {getImprovedCode} from "../../api.js";
+import Footer from "../components/Footer.jsx";
 
 let oldCode = `
 const a = 10
@@ -159,6 +160,8 @@ function Changes() {
           />
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

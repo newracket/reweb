@@ -12,6 +12,7 @@ import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import {getImprovedCode} from "../../api.js";
+import Footer from "../components/Footer.jsx";
 
 function Home() {
   const fileUpload = useRef(null);
@@ -100,11 +101,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="footer">
-        <footer>
-          <p>Copyright © 2023 ReWeb</p>
-        </footer>
-      </div>
+      <Footer />
     </div>
   );
 }

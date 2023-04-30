@@ -9,6 +9,7 @@
 
 .changes-container {
   display: flex;
+  overflow: hidden;
 
   width: 100%;
   height: 100%;
@@ -44,7 +45,6 @@
 
 .happy-label, .frown-label {
   font-size: 1.25em;
-  /*margin: 1em;*/
 }
 
 .happy-label {
@@ -56,8 +56,9 @@
 }
 
 .changes-main-content {
-  height: 100%;
   width: 70%;
+
+  overflow-y: auto;
 }
 
 .buttons-table {
