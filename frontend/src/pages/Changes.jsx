@@ -13,7 +13,7 @@ import "../styles/changes.css";
 import {useMemo, useState} from "react";
 import Navbar from "../components/Navbar.jsx";
 import {useLocation, useNavigate} from "react-router-dom";
-import {getImprovedCode} from "../../api.js";
+import {getImprovedCode} from "../api.js";
 import Footer from "../components/Footer.jsx";
 
 let oldCode = `

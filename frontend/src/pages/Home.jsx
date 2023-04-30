@@ -11,7 +11,7 @@ import { useRef, useState } from "react";
 import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import {getImprovedCode} from "../../api.js";
+import {getImprovedCode} from "../api.js";
 import Footer from "../components/Footer.jsx";
 
 function Home() {
