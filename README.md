@@ -1,3 +1,15 @@
+To run this, please run a python virtual environment 
+```
+source venv/bin/activate
+```
+
+Similarly, please create a `.env` file in `api/`, which contains the following statement:
+```
+EDEN=token
+```
+
+Replace the token with your Eden AI token. Finally in order to run the application run `flask run` in the parent directory, and `npm run dev` on the `frontend/` directory in separate terminals. This should let you run the application.
+
 # ReWeb
 
 A web application to improve your code. The application fixes bugs, improves 
