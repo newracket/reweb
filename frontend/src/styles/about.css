@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Poppins:wght@700&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+.about-outer-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-container {
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+}
+
+.about-banner {
+    width: 100%;
+    height: 30%;
+    background-color: #11557C;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.about-banner h1{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 100px;
+    margin-top: 0px;
+}
+
+.about-us-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px 0;
+    width: 70%;
+    height: 50%;
+    margin: -90px auto 0;
+    background-color: white;
+    border: 3px solid gray;
+}
+
+.our-mission, .how-we-made-this {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+.reweb-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#reweb-logo {
+    height: 200px;
+    margin-left: 30px;
+    margin-top: 80px;
+}
+.our-mission{
+    margin-left: -50px;
+}
+.how-we-made-this {
+    margin-right: 0px;
+}
+
+.logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 10%
+}
+
+#react-logo, #javascript-logo {
+    height: 150px;
+    margin-right: 90px;
+}
+
+#react-logo {
+    margin-top: 50px;
+}
+
+.about-us-box p {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+}
+
+.footer {
+    margin-top: auto;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
